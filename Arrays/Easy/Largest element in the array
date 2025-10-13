@@ -10,7 +10,6 @@ int largestElement(vector<int>& nums) {
         if(val > maxNum)
             maxNum = val;
     }
-    
     return maxNum;
 }
 
