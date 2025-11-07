@@ -16,8 +16,7 @@ int findKthLargest(vector<int>& nums, int k) {
                 currMax = nums[j];
         }
         
-        if(currMax < prevMax)
-            prevMax = currMax;
+        prevMax = currMax;
     }
     
     return prevMax;
