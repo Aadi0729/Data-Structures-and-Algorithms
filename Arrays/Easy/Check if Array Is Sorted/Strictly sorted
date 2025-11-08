@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+bool isSorted(vector<int>& nums) {
+    int n = nums.size();
+    bool asc = true;
+    bool desc = true;
+    if(n == 1) {
+        return true;
+    }
+    
+    for(int i=0; i<n-1; i++) {
+        if(nums[i] >= nums[i+1])
+            asc = false;
+        if(nums[i] <= nums[i+1])
+            desc = false;
+        if(!asc && !desc)
+            return false;
+    }
+    
+    return asc || desc;
+}
+
+int main() {
+    int n;
+    cout << "Enter size: ";
+    cin >> n;
+    
+    if(n<=0) {
+        cout << "Invalid size!";
+        return 0;
+    }
+    
+    vector<int> nums(n);
+    cout << "Enter the elements: ";
+    for(int i=0; i<n; i++) {
+        cin >> nums[i];
+    }
+    
+    bool res = isSorted(nums);
+    
+    if(res)
+        cout << "The array is sorted.";
+    else
+        cout << "The array is not sorted.";
+    
+    return 0;
+}
