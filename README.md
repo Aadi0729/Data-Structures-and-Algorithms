@@ -1,7 +1,7 @@
 # 🧠 DSA Practice Repository
 
 Welcome to my **Data Structures & Algorithms** repository! 🚀  
-Here I document my problem-solving journey — from **brute force** to **optimized** solutions — all written in **C++**.
+Here I document my problem-solving journey - from **brute force** to **optimized** solutions - all written in **C++**.
 
 ## 📘 About
 This repo contains problems solved from:
