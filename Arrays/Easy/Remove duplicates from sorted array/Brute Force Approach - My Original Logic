@@ -1,0 +1,50 @@
+"""
+My Logic
+--------
+- Keep all unique elements at the start of the array by swapping.
+- For each duplicate, search ahead for the next unique element and swap it forward.
+- Works correctly but inefficient for large inputs.
+
+Time Complexity: O(n²)
+Space Complexity: O(1)
+"""
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int n = nums.size();
+
+        if(n <= 1)
+            return n;
+
+       int i=0;
+       int j=1;
+
+       while(j != n-1) {
+        if(nums[i] < nums[j]) {
+            j++;
+            i++;
+        }
+        else{
+            for(int p=j+1; p<n; p++) {
+                if(nums[p] > nums[i]) {
+                    swap(nums[p], nums[j]);
+                    break;
+                }
+            }
+        j++;
+        i++;
+        }
+       }
+
+       int k = 1;
+       for(int i=1; i<=n-1; i++) {
+        if(nums[i] > nums[i-1])
+            k++;
+        else
+            break;
+       }
+
+       return k;
+    }
+};
