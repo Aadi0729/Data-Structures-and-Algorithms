@@ -1,0 +1,24 @@
+Without using any extra space in O(1) space complexity and O(n) time complexity.
+
+class Solution {
+public:
+    void reverseArray(vector<int>& nums, int start, int end) {
+        int s = start;
+        int e = end;
+
+        while(s <= e) {
+            swap(nums[s], nums[e]);
+            s++;
+            e--;
+        }
+    }
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+
+        k = k%n;
+
+        reverseArray(nums, 0, n-k-1);
+        reverseArray(nums, n-k, n-1);
+        reverseArray(nums, 0, n-1);
+    }
+};
