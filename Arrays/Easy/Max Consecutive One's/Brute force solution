@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int maxConsecutiveOnes(vector<int>& nums) {
+  int n = nums.size();
+  
+  int maxCnt1 = 0;
+  
+  for(int i=0; i<n; i++) {
+    int cnt1 = 0;
+    for(int j=i; j<n; j++) {
+      if(nums[j] == 1) {
+        cnt1++;
+        maxCnt1 = max(cnt1, maxCnt1);
+      }
+      else {
+        break;
+      }
+    }
+  }
+  
+  return maxCnt1;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    
+    vector<int> nums(n);
+    for(int i=0; i<n; i++) {
+        cin >> nums[i];
+    }
+    
+    int res = maxConsecutiveOnes(nums);
+    
+    cout << res << " maximum consecutive ones are present in nums.";
+    
+    return 0;
+}
