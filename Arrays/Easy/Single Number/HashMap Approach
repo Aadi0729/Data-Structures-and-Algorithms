@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+int findSingleNumber(vector<int>& nums) {
+  int n = nums.size();
+  
+  unordered_map<int, int> mpp;
+  
+  for(int i=0; i<n; i++) {
+    mpp[nums[i]]++;
+  }
+  
+  for(auto pair : mpp) {
+    if(pair.second == 1)
+      return pair.first;
+  }
+  
+  return -1;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    
+    vector<int> nums(n);
+    for(int i=0; i<n; i++) {
+        cin >> nums[i];
+    }
+    
+    int res = findSingleNumber(nums);
+    
+    cout << res << " is the number appeared once in the array.";
+    
+    return 0;
+}
