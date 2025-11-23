@@ -75,3 +75,7 @@ long long -> -10^18 to 10^18
 
 # If-else statement
 # Switch statement
+
+# FOR-LOOP
+# WHILE LOOP
+# DO-WHILE LOOP
