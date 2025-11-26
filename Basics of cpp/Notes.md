@@ -104,23 +104,31 @@ Examples: sqrt(), max(), min(), sort()
 Functions we create.
 
 3. **How to Create a Function**
-returnType functionName(parameters) {
+
+returnType functionName(parameters) 
+{
     // code
 }
 
 4. **Calling a Function**
+
 functionName();
+
 This executes the function.
 
 5. **Function with Parameters**
-void sayHi(string name) {
+
+void sayHi(string name) 
+{
     cout << "Hi " << name;
 }
 
 sayHi("Aditya"); -> Call
 
 6. **Function with Return Value**
-int add(int a, int b) {
+
+int add(int a, int b) 
+{
     return a + b;
 }
 
@@ -145,7 +153,8 @@ Functions are the foundation for recursion, which is key in:
 
 Changes do NOT affect original value.
 
-void change(int a) {
+void change(int a) 
+{
     a = 10;
 }
 
@@ -159,7 +168,8 @@ cout << x;  // still 5
 
 Changes DO affect original value.
 
-void change(int &a) {
+void change(int &a) 
+{
     a = 10;
 }
 
@@ -176,11 +186,16 @@ Used a lot in arrays & recursion.
 
 Same function name, different parameters.
 
-int add(int a, int b) { return a + b; }
+int add(int a, int b) 
+{
+    return a + b; 
+}
+
 double add(double a, double b) { return a + b; }
 
 10. **Default Arguments**
-int mul(int a, int b = 2) {
+int mul(int a, int b = 2) 
+{
     return a * b;
 }
 
@@ -191,7 +206,8 @@ mul(5, 10); // uses b = 10
 
 Used to reduce function call overhead.
 
-inline int square(int x) {
+inline int square(int x) 
+{
     return x * x;
 }
 
@@ -201,11 +217,15 @@ If function is written after main():
 
 int add(int a, int b);  // prototype
 
-int main() {
+int main() 
+{
     cout << add(2, 3);
 }
 
-int add(int a, int b) { return a + b; }
+int add(int a, int b) 
+{ 
+    return a + b; 
+}
 
 Not required if function is written above main.
 
@@ -213,7 +233,8 @@ Not required if function is written above main.
 
 When passing an array to a function:
 
-void printArray(int arr[], int n) {
+void printArray(int arr[], int n) 
+{
     for(int i=0; i<n; i++) cout << arr[i] << " ";
 }
 
@@ -229,7 +250,8 @@ Foundation of:
 
 Example:
 
-int factorial(int n) {
+int factorial(int n) 
+{
     if(n == 0) return 1;
     return n * factorial(n - 1);
 }
