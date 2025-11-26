@@ -79,3 +79,166 @@ long long -> -10^18 to 10^18
 # FOR-LOOP
 # WHILE LOOP
 # DO-WHILE LOOP
+
+----------------------------------------------------------------------------
+
+# Functions
+-----------
+
+1. What is a Function?
+
+A function is a block of code that performs a specific task.
+
+It helps in:
+- reusing cod
+- reducing repetition
+- making code clean & organized
+- breaking problems into smaller parts
+
+2. Types of Functions
+
+**Built-in Functions**
+Given by C++ library
+Examples: sqrt(), max(), min(), sort()
+
+**User-defined Functions**
+Functions we create.
+
+3. How to Create a Function
+returnType functionName(parameters) {
+    // code
+}
+
+4. Calling a Function
+functionName();
+This executes the function.
+
+5. Function with Parameters
+void sayHi(string name) {
+    cout << "Hi " << name;
+}
+
+sayHi("Aditya"); -> Call
+
+6. Function with Return Value
+int add(int a, int b) {
+    return a + b;
+}
+
+Call: int sum = add(10, 20);
+
+
+7. **Why Functions are Important in DSA**
+reuse logic (sum, max, reverse array, etc.)
+divide complex problems
+make recursive functions
+make sorting, searching functions
+increase code readability
+
+Functions are the foundation for recursion, which is key in:
+- Trees
+- Backtracking
+- Dynamic programming
+
+8. Function Parameters: Pass by Value vs Pass by Reference
+
+✔ **Pass by Value (Copy)**
+
+Changes do NOT affect original value.
+
+void change(int a) {
+    a = 10;
+}
+
+Call:
+
+int x = 5;
+change(x);
+cout << x;  // still 5
+
+✔ **Pass by Reference**
+
+Changes DO affect original value.
+
+void change(int &a) {
+    a = 10;
+}
+
+Call:
+
+int x = 5;
+change(x);
+cout << x;  // now 10
+
+Used a lot in arrays & recursion.
+
+
+9. Function Overloading
+
+Same function name, different parameters.
+
+int add(int a, int b) { return a + b; }
+double add(double a, double b) { return a + b; }
+
+10. Default Arguments
+int mul(int a, int b = 2) {
+    return a * b;
+}
+
+mul(5);     // uses b = 2
+mul(5, 10); // uses b = 10
+
+11. Inline Functions
+
+Used to reduce function call overhead.
+
+inline int square(int x) {
+    return x * x;
+}
+
+12. **Function Prototypes (Declaration)**
+
+If function is written after main():
+
+int add(int a, int b);  // prototype
+
+int main() {
+    cout << add(2, 3);
+}
+
+int add(int a, int b) { return a + b; }
+
+Not required if function is written above main.
+
+13. Functions and Arrays
+
+When passing an array to a function:
+
+void printArray(int arr[], int n) {
+    for(int i=0; i<n; i++) cout << arr[i] << " ";
+}
+
+Arrays are always passed by reference (address is passed), so changes inside function affect the array.
+
+14. Recursion (Functions calling themselves)
+
+Foundation of:
+- Backtracking
+- Tree problems
+- DP
+- Divide & Conquer
+
+Example:
+
+int factorial(int n) {
+    if(n == 0) return 1;
+    return n * factorial(n - 1);
+}
+
+15. Return Types
+Type	                        Means
+void	                   returns nothing
+int	                       returns integer
+bool	                   returns true/false
+string	                   returns string
+custom struct/class	       returns custom object

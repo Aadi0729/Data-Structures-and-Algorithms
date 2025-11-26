@@ -108,5 +108,30 @@ int main()
         break;
     } */
 
+    // LOOPS:
+
+    // FOR LOOP
+    // int n = 5;
+    // for(int i=0; i<n; i++) { // scope of i is only inside for loop
+    //     cout << "Aditya" << endl;
+    // }
+
+    // WHILE LOOP
+    // int i = 1;
+    // while(i <= 5) {
+    //     cout << "Aditya" << endl;
+    //     i++;
+    // }
+
+
+    // DO-WHILE LOOP
+    // int i = 3;
+    // do {
+    //     cout << "Aditya" << endl;
+    //     i++;
+    // } while(i >= 5);
+
+    
+
     return 0;
 }
