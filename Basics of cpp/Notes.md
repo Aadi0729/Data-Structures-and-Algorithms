@@ -89,7 +89,7 @@ long long -> -10^18 to 10^18
 A function is a block of code that performs a specific task.
 
 It helps in:
-- reusing cod
+- reusing code
 - reducing repetition
 - making code clean & organized
 - breaking problems into smaller parts
