@@ -83,9 +83,8 @@ long long -> -10^18 to 10^18
 ----------------------------------------------------------------------------
 
 # Functions
------------
 
-1. What is a Function?
+1. **What is a Function?**
 
 A function is a block of code that performs a specific task.
 
@@ -95,7 +94,7 @@ It helps in:
 - making code clean & organized
 - breaking problems into smaller parts
 
-2. Types of Functions
+2. **Types of Functions**
 
 **Built-in Functions**
 Given by C++ library
@@ -104,23 +103,23 @@ Examples: sqrt(), max(), min(), sort()
 **User-defined Functions**
 Functions we create.
 
-3. How to Create a Function
+3. **How to Create a Function**
 returnType functionName(parameters) {
     // code
 }
 
-4. Calling a Function
+4. **Calling a Function**
 functionName();
 This executes the function.
 
-5. Function with Parameters
+5. **Function with Parameters**
 void sayHi(string name) {
     cout << "Hi " << name;
 }
 
 sayHi("Aditya"); -> Call
 
-6. Function with Return Value
+6. **Function with Return Value**
 int add(int a, int b) {
     return a + b;
 }
@@ -140,7 +139,7 @@ Functions are the foundation for recursion, which is key in:
 - Backtracking
 - Dynamic programming
 
-8. Function Parameters: Pass by Value vs Pass by Reference
+8. **Function Parameters: Pass by Value vs Pass by Reference**
 
 ✔ **Pass by Value (Copy)**
 
@@ -173,14 +172,14 @@ cout << x;  // now 10
 Used a lot in arrays & recursion.
 
 
-9. Function Overloading
+9. **Function Overloading**
 
 Same function name, different parameters.
 
 int add(int a, int b) { return a + b; }
 double add(double a, double b) { return a + b; }
 
-10. Default Arguments
+10. **Default Arguments**
 int mul(int a, int b = 2) {
     return a * b;
 }
@@ -188,7 +187,7 @@ int mul(int a, int b = 2) {
 mul(5);     // uses b = 2
 mul(5, 10); // uses b = 10
 
-11. Inline Functions
+11. **Inline Functions**
 
 Used to reduce function call overhead.
 
@@ -210,7 +209,7 @@ int add(int a, int b) { return a + b; }
 
 Not required if function is written above main.
 
-13. Functions and Arrays
+13. **Functions and Arrays**
 
 When passing an array to a function:
 
@@ -220,7 +219,7 @@ void printArray(int arr[], int n) {
 
 Arrays are always passed by reference (address is passed), so changes inside function affect the array.
 
-14. Recursion (Functions calling themselves)
+14. **Recursion (Functions calling themselves)**
 
 Foundation of:
 - Backtracking
@@ -235,7 +234,7 @@ int factorial(int n) {
     return n * factorial(n - 1);
 }
 
-15. Return Types
+15. **Return Types**
 Type	                        Means
 void	                   returns nothing
 int	                       returns integer
