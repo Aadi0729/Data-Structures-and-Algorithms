@@ -195,6 +195,15 @@ void printPattern15(int n) {
         cout << endl;
     }
 }
+
+void printPattern16(int n) {
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<i+1; j++) {
+            cout << char('A' + (n-i-1)+j) << " ";
+        }
+        cout << endl;
+    }
+}
 int main() {
     int n;
     cout << "Enter n: " << endl;
@@ -215,6 +224,7 @@ int main() {
     // printPattern13(n);
     // printPattern14(n);
     // printPattern15(n);
+    // printPattern16(n);
 
     return 0;
 }
