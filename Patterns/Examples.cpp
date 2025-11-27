@@ -209,22 +209,22 @@ int main() {
     cout << "Enter n: " << endl;
     cin >> n;
 
-    // printPattern1(n);
-    // printPattern2(n);
-    // printPattern3(n);
-    // printPattern4(n);
-    // printPattern5(n);
-    // printPattern6(n);
-    // printPattern7(n);
-    // printPattern8(n);
-    // printPattern9(n);
-    // printPattern10(n);
-    // printPattern11(n);
-    // printPattern12(n);
-    // printPattern13(n);
-    // printPattern14(n);
-    // printPattern15(n);
-    // printPattern16(n);
+    printPattern1(n);
+    printPattern2(n);
+    printPattern3(n);
+    printPattern4(n);
+    printPattern5(n);
+    printPattern6(n);
+    printPattern7(n);
+    printPattern8(n);
+    printPattern9(n);
+    printPattern10(n);
+    printPattern11(n);
+    printPattern12(n);
+    printPattern13(n);
+    printPattern14(n);
+    printPattern15(n);
+    printPattern16(n);
 
     return 0;
 }
