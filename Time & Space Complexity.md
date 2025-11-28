@@ -109,7 +109,7 @@ O(n + 100) → O(n)
 | O(2ⁿ)      | 25           |
 | O(n!)      | 10           |
 
-# Final 5-Point Summary (Perfect for Last-Minute Revision)
+# Final 5-Point Summary
 
 1️⃣ Always check input constraints before choosing an approach.
 2️⃣ 1 second = ~10⁸ operations in C++.
