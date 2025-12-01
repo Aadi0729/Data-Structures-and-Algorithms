@@ -3,36 +3,37 @@
 using namespace std;
 
 // int reverseNumber(int number) {
-//     int originalNumber = number;
-//     int cnt = 0;
+//     int originalNum = number;
 
+//     int cnt = 0;
 //     while(number != 0) {
 //         number /= 10;
 //         cnt++;
 //     }
 
-//     int reversed = 0;
-       
+//     int reversedNum = 0;
+//     number = originalNum;
 //     while(cnt > 0) {
-//         int digit = originalNumber % 10;
-//         reversed = reversed + pow(10, cnt-1) * digit;
-
-//         originalNumber /= 10;
+//         int digit = number % 10;
+//         reversedNum = reversedNum + digit * pow(10, cnt-1);
+//         number /= 10;
 //         cnt--;
 //     }
 
-//     return reversed;
+//     return reversedNum;
+    
 // }
 
-int reverseNumber(int number) {
-    int reversed = 0;
 
+int reverseNumber(int number) {
+    int reversedNum = 0;
     while(number != 0) {
         int digit = number % 10;
-        reversed = reversed * 10 + digit;
+        reversedNum = reversedNum * 10 + digit;
         number /= 10;
     }
-    return reversed;
+
+    return reversedNum;
 }
 int main() {
     int num;
