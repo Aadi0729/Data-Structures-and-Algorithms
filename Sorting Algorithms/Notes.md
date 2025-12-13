@@ -124,3 +124,70 @@ Yes (fast on nearly sorted arrays)
 **Key Insight:**
 
 Shifting is cheaper than swapping → very efficient for small or nearly-sorted data.
+
+
+# 4. Merge Sort
+
+*Idea:*
+
+Use Divide & Conquer — split the array into halves, sort each half recursively, then merge the sorted halves.
+
+*Process:*
+
+Divide array into two halves until subarrays are size 1
+
+Recursively sort left and right halves
+
+Merge two sorted halves using two pointers and a temp array
+
+*Levels:*
+
+Splitting levels ≈ ⌈log₂(n)⌉ + 1
+
+Merging levels ≈ ⌈log₂(n)⌉
+
+*Time Complexity:*
+
+Best: O(n log n)
+
+Average: O(n log n)
+
+Worst: O(n log n)
+
+(At every merge level, all n elements are processed once.)
+
+*Space Complexity:*
+
+O(n) extra space (temporary array used during merging)
+
+*Stable?:*
+
+Yes (using <= during merge preserves order of equal elements)
+
+*In-place?:*
+
+No (requires extra memory for merging)
+
+*Adaptive?:*
+
+No (still performs full merge even if array is sorted)
+
+*Key Insight:*
+
+Although subarrays get smaller, all elements are merged at every level, leading to n × log n operations.
+
+*When to Use:*
+
+Large datasets
+
+When stable sorting is required
+
+When guaranteed O(n log n) worst-case time is needed
+
+External sorting (disk-based data)
+
+*Comparison Highlight:*
+
+Faster and more predictable than O(n²) sorts
+
+Uses more memory than Quick Sort
