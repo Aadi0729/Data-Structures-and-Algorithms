@@ -191,3 +191,76 @@ External sorting (disk-based data)
 Faster and more predictable than O(n²) sorts
 
 Uses more memory than Quick Sort
+
+
+# 5. Quick Sort
+
+*Idea:*
+
+Use Divide & Conquer — pick a pivot, partition the array so elements ≤ pivot go left and > pivot go right, then recursively sort both sides.
+
+*Process:*
+
+Choose a pivot element
+
+Partition the array around the pivot
+
+Place pivot in its correct position
+
+Recursively apply Quick Sort to left and right subarrays
+
+*Partition (Key Step):*
+
+Use two pointers to rearrange elements
+
+Elements smaller than pivot move left
+
+Elements larger than pivot move right
+
+Pivot ends in its final sorted position
+
+*Base Case:*
+if (low >= high) return;
+
+
+low == high → single element
+
+low > high → empty subarray
+
+**Time Complexity:**
+
+*Best:* O(n log n) (balanced partitions)
+
+*Average:* O(n log n)
+
+*Worst:* O(n²) (pivot always smallest or largest)
+
+**Space Complexity:**
+
+O(log n) (recursion stack, average case)
+
+*Worst case:* O(n)
+
+*Stable?:*
+
+No (swapping breaks relative order of equal elements)
+
+*In-place?:*
+
+Yes (no extra array needed for partitioning)
+
+*Adaptive?:*
+
+No (performance depends on pivot choice)
+
+*Key Insight:*
+
+Quick Sort’s efficiency depends entirely on how balanced the partitions are.
+
+**Worst-Case Scenario:**
+
+*Occurs when:*
+
+Array is already sorted
+
+Pivot is always first or last element
