@@ -359,6 +359,7 @@ Each call reduces problem size by 1
 Case	Space
 Best / Average	O(log n)
 Worst	O(n)
+
 1️⃣1️⃣ Stability
 
 ❌ Not Stable
