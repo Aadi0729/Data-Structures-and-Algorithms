@@ -193,74 +193,244 @@ Faster and more predictable than O(n²) sorts
 Uses more memory than Quick Sort
 
 
-# 5. Quick Sort
 
-*Idea:*
+# 5. QUICK SORT
 
-Use Divide & Conquer — pick a pivot, partition the array so elements ≤ pivot go left and > pivot go right, then recursively sort both sides.
+1️⃣ What is Quick Sort?
 
-*Process:*
+Quick Sort is a Divide and Conquer sorting algorithm that sorts an array by:
 
-Choose a pivot element
+choosing a pivot
 
-Partition the array around the pivot
+partitioning the array around the pivot
 
-Place pivot in its correct position
+recursively sorting the left and right subarrays
 
-Recursively apply Quick Sort to left and right subarrays
+2️⃣ Core Idea (Must Remember)
 
-*Partition (Key Step):*
+Place one element (pivot) in its correct position, then solve the same problem on smaller subarrays.
 
-Use two pointers to rearrange elements
+Quick Sort does not try to sort everything at once.
 
-Elements smaller than pivot move left
+3️⃣ Principle Used
 
-Elements larger than pivot move right
+Divide & Conquer
 
-Pivot ends in its final sorted position
+Divide → partition around pivot
 
-*Base Case:*
+Conquer → recursively sort subarrays
+
+Combine → no explicit merge required
+
+4️⃣ Pivot
+
+A pivot is a chosen element around which the array is partitioned.
+
+Pivot selection strategies:
+
+First element
+
+Last element
+
+Random element
+
+Median of three
+
+👉 Pivot choice strongly affects performance.
+
+5️⃣ Partitioning (Key Operation)
+
+Partitioning rearranges elements such that:
+
+All elements ≤ pivot are on the left
+
+All elements > pivot are on the right
+
+Pivot ends up in its final sorted position
+
+After partition:
+
+Left Subarray | Pivot | Right Subarray
+
+
+The pivot index is called the partition index.
+
+6️⃣ Recursive Structure
+quickSort(low, high):
+    if low >= high → return
+    p = partition(low, high)
+    quickSort(low, p-1)
+    quickSort(p+1, high)
+
+7️⃣ Base Case (Very Important)
 if (low >= high) return;
 
 
-low == high → single element
+Why?
+
+low == high → single element (already sorted)
 
 low > high → empty subarray
 
-**Time Complexity:**
+Partitioning can create empty subarrays, so both must stop recursion.
 
-*Best:* O(n log n) (balanced partitions)
+8️⃣ How Quick Sort Works (Execution Flow)
 
-*Average:* O(n log n)
+quickSort() is called
 
-*Worst:* O(n²) (pivot always smallest or largest)
+Base case checked
 
-**Space Complexity:**
+partition() is executed
 
-O(log n) (recursion stack, average case)
+Pivot reaches correct position
 
-*Worst case:* O(n)
+Left and right recursive calls are made
 
-*Stable?:*
+Process repeats until array is sorted
 
-No (swapping breaks relative order of equal elements)
+9️⃣ Time Complexity (TC)
+🔹 Partition Cost
 
-*In-place?:*
+Partition always scans the subarray once
 
-Yes (no extra array needed for partitioning)
+Cost = O(n)
 
-*Adaptive?:*
+🔹 Best Case — O(n log n)
 
-No (performance depends on pivot choice)
+Pivot divides array into nearly equal subarrays
 
-*Key Insight:*
+Work per level = O(n)
 
-Quick Sort’s efficiency depends entirely on how balanced the partitions are.
+Number of levels = log n
 
-**Worst-Case Scenario:**
+O(n) × log n = O(n log n)
 
-*Occurs when:*
+🔹 Average Case — O(n log n)
 
-Array is already sorted
+Random pivot usually produces reasonably balanced splits
 
-Pivot is always first or last element
+Most real-world cases fall here
+
+🔹 Worst Case — O(n²)
+
+Occurs when:
+
+Pivot is always smallest or largest
+
+Array already sorted
+
+Partition produces:
+
+0 elements | n-1 elements
+
+
+Total work:
+
+n + (n-1) + (n-2) + ... + 1 = O(n²)
+
+🔹 Time Complexity Summary
+Case	Time
+Best	O(n log n)
+Average	O(n log n)
+Worst	O(n²)
+🔟 Space Complexity (SC)
+
+Quick Sort is in-place, but recursion uses stack space.
+
+🔹 What counts as space?
+
+Only recursive quickSort() calls
+
+partition() is temporary → O(1) space
+
+🔹 Best / Average Case — O(log n)
+
+Balanced recursion
+
+Stack depth ≈ log n
+
+🔹 Worst Case — O(n)
+
+Skewed recursion
+
+Each call reduces problem size by 1
+
+🔹 Space Complexity Summary
+Case	Space
+Best / Average	O(log n)
+Worst	O(n)
+1️⃣1️⃣ Stability
+
+❌ Not Stable
+
+Equal elements may change relative order due to swapping
+
+1️⃣2️⃣ In-place?
+
+✅ Yes
+
+No extra array required
+
+1️⃣3️⃣ Adaptive?
+
+❌ No
+
+Does not become faster automatically for sorted arrays
+
+Sorted input can cause worst case
+
+1️⃣4️⃣ Advantages
+
+Very fast in practice
+
+In-place sorting
+
+Cache-friendly
+
+Widely used in standard libraries
+
+1️⃣5️⃣ Disadvantages
+
+Worst-case O(n²)
+
+Not stable
+
+Performance depends on pivot choice
+
+1️⃣6️⃣ How to Improve Quick Sort
+
+Randomized pivot selection
+
+Median-of-three pivot
+
+Hybrid approaches (Introsort)
+
+1️⃣7️⃣ Real-World Usage
+
+std::sort() → Introsort (Quick Sort + Heap Sort)
+
+Java primitive array sort → Dual-Pivot Quick Sort
+
+Used when performance & memory efficiency matter
+
+1️⃣8️⃣ Quick Sort vs Merge Sort (One-liner)
+
+Merge Sort → stable, extra space, guaranteed O(n log n)
+
+Quick Sort → in-place, faster in practice, but worst case exists
+
+1️⃣9️⃣ One-Line Interview Summary (Gold)
+
+“Quick Sort is an in-place divide-and-conquer algorithm that partitions the array around a pivot and recursively sorts subarrays, achieving O(n log n) average time but O(n²) in the worst case.”
+
+2️⃣0️⃣ Key Takeaways (Must Remember)
+
+Partition does the real work
+
+Pivot choice decides performance
+
+Recursion depth decides space complexity
+
+Balanced recursion → fast
+
+Skewed recursion → slow
