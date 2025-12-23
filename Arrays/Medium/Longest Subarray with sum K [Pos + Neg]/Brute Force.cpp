@@ -1,3 +1,6 @@
+// TC = O(n^3) boils down to O(n^2) using 2 loops only.
+// SC = O(1)
+
 #include <bits/stdc++.h>
 using namespace std;
 
