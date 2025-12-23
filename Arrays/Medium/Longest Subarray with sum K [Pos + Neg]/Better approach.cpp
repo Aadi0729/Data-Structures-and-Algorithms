@@ -1,6 +1,8 @@
 // TC = O(nlogn)
 // SC = O(n)
 
+// Unordered map must be used because the order doesn't matter here | TC = O(n*1): Constant lookup and insertion | Worst Case: O(n*n) = O(n^2) in case if there happens multiple collisions.
+
 #include <bits/stdc++.h>
 using namespace std;
 
