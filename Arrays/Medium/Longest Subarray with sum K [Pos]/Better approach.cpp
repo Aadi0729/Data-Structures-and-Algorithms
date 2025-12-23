@@ -1,3 +1,6 @@
+// TC = O(nlogn)
+// SC = O(n)
+
 #include <bits/stdc++.h>
 using namespace std;
 
