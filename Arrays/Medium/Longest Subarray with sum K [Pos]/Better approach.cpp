@@ -20,7 +20,8 @@ int longestSubarray(vector<int>& nums, int k) {
         if(mpp.find(prefixSum-k) != mpp.end()) {
             maxLen = max(maxLen, i - mpp[prefixSum-k]);
         }
-        mpp[prefixSum] = i;
+        if(mpp.find(prefixSum) == mpp.end())
+            mpp[prefixSum] = i;
     } 
 
     return maxLen;    
