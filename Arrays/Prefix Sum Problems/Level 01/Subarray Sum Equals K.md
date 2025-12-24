@@ -18,6 +18,7 @@ k = 2
 The subarrays with sum = 2 are:
 
 [1, 1] (indices 0 to 1)
+
 [1, 1] (indices 1 to 2)
 
 **Example 2**
@@ -32,6 +33,7 @@ k = 3
 The subarrays with sum = 3 are:
 
 [1, 2]
+
 [3]
 
 ## SOLUTION
