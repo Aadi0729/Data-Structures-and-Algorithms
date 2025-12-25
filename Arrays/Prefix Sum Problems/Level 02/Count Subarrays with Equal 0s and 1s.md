@@ -8,22 +8,22 @@ Your task is to count the total number of subarrays that contain an equal number
 
 Return the count.
 ```
-**Example 1**
-*Input:*
+Example 1
+Input:
 nums = [0, 1]
 
-*Output:*
+Output:
 1
 ```
 *Explanation:*
 
 The subarray [0, 1] contains one 0 and one 1.
 ```
-**Example 2**
-*Input:*
+Example 2
+Input:
 nums = [0, 1, 0]
 
-*Output:*
+Output:
 2
 ```
 *Explanation:*
@@ -33,11 +33,11 @@ The subarrays with equal 0s and 1s are:
 [0, 1]
 [1, 0]
 ```
-**Example 3**
-*Input:*
+Example 3
+Input:
 nums = [0, 0, 1, 0, 1, 1]
 
-*Output:*
+Output:
 6
 ```
 ## SOLUTION
