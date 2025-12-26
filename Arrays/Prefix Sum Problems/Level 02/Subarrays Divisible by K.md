@@ -122,3 +122,33 @@ Which is clearly divisible by k.
 ```
 It’s a mathematical property: if two numbers have the same remainder modulo k, their difference must be a multiple of k. That’s why matching prefix sum remainders guarantees a subarray divisible by k.
 ```
+## When rem < 0:
+**Why adding k is sufficient (general proof)**
+
+Suppose:
+
+𝑟 = 𝑎 % 𝑘 
+
+From C++ rules:
+
+−𝑘 < 𝑟 < 𝑘
+
+So the only invalid case is:
+
+r < 0 ⇒ −k < r < 0
+
+Now add k:
+
+r + k ∈ (0,k)
+
+So:
+
+0 ≤ r + k < k
+
+Which is exactly the mathematical remainder range.
+
+Therefore:
+
+If r<0, then r+k is the unique mathematical remainder
+
+### NOTE: Adding k works because negative remainders already lie in (-k, 0), and shifting by one full modulo cycle places them into the unique canonical range [0, k-1] without changing their equivalence class.
