@@ -51,6 +51,7 @@ using namespace std;
 bool checkSubarray(vector<int>& nums, int k) {
     int n = nums.size();
 
+    // Edge Case: If k = 0
     if(k == 0) {
         for(int i=1; i<n; i++) {
             if(nums[i] == 0 && nums[i-1] == 0)
@@ -115,3 +116,6 @@ int main() {
 **Time Complexity: ```O(n)```**
 
 **Space Complexity: ```O(n)```**
+```
+This is the divisible-by-k prefix-sum problem with an added constraint of subarray length ≥ 2 and a special case for k = 0.
+```
