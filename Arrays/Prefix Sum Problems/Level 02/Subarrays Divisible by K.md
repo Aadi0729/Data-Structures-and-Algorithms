@@ -103,3 +103,22 @@ Time Complexity: O(n)
 ```
 Space Complexity: O(n)
 ```
+
+If two numbers have the same remainder r when divided by k, then they can be written as:
+```
+Number1 = a*k + r
+Number2 = b*k + r
+```
+
+Subtracting them:
+```
+Number2 − Number1
+= (b*k + r) − (a*k + r)
+= (b − a) * k
+```
+
+Which is clearly divisible by k.
+
+```
+It’s a mathematical property: if two numbers have the same remainder modulo k, their difference must be a multiple of k. That’s why matching prefix sum remainders guarantees a subarray divisible by k.
+```
