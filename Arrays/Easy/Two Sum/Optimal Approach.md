@@ -73,4 +73,5 @@ int main() {
 - Return stored original indices
 
 **TC**: ```O(n log n)```
+
 **SC**: ```O(n)```
