@@ -35,7 +35,7 @@ pair<int, int> twoSum(vector<int>& nums, int target) {
         }
     }
 
-    return {0,0};
+    return {-1,-1};
 }
 
 int main() {
