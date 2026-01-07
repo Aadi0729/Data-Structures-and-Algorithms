@@ -1,77 +1,14 @@
-**Problem**
+## IDEA
 
-Given an integer array ```nums```, return all unique triplets
-```[nums[i], nums[j], nums[k]]``` such that:
+1. Sort each valid triplet
+2. Store it in a ```set```
+3. Convert the set back to a vector
 
-- ```i ≠ j```, ```i ≠ k```, and ```j ≠ k```
-- ```nums[i] + nums[j] + nums[k] = 0```
-- The solution set *must not contain duplicate triplets*
+Why this is correct:
 
-**Important Notes**
+- Sorting normalizes order (```{-1,0,1}``` always looks the same)
 
-- The order of numbers inside a triplet does not matter.
-- The order of triplets in the output does not matter.
-- Duplicate triplets are not allowed, even if they come from different indices.
-
-**Input Format**
-
-- An integer array ```nums``` of length ```n```
-- ```3 ≤ n ≤ 3000```
-- ```-10⁵ ≤ nums[i] ≤ 10⁵```
-
-**Output Format**
-
-- Return a list of unique triplets where the sum of elements is ```0```.
-
-**Example 1**
-**Input**
-```
-nums = [-1, 0, 1, 2, -1, -4]
-```
-
-**Output**
-```
-[[-1, -1, 2], [-1, 0, 1]]
-```
-
-**Explanation**
-
-Possible triplets whose sum is zero:
-
-- ```(-1, -1, 2)```
-- ```(-1, 0, 1)```
-
-Triplet ```(-1, 0, 1)``` appears multiple times via different indices but is included only once.
-
-**Example 2**
-**Input**
-```
-nums = [0, 0, 0, 0]
-```
-
-**Output**
-```
-[[0, 0, 0]]
-```
-
-**Explanation**
-
-Although there are multiple index combinations, only one unique triplet is allowed.
-
-**Example 3**
-**Input**
-```
-nums = [1, 2, -2, -1]
-```
-
-**Output**
-```
-[]
-```
-
-**Explanation**
-
-No three numbers sum to zero.
+- ```set``` guarantees uniqueness
 
 ```
 #include <bits/stdc++.h>
