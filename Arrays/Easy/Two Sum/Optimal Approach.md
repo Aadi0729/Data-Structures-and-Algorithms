@@ -1,6 +1,7 @@
 ### Sorting + Two Pointers (Index-Safe Version)
 
 Problem: Sorting destroys original indices
+
 Fix: Store (value, index) pairs
 
 ```
