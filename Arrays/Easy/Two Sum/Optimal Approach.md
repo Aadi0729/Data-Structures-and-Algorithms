@@ -76,3 +76,27 @@ int main() {
 **TC**: ```O(n log n)```
 
 **SC**: ```O(n)```
+
+## Memory-Constraint Discussion (Important Interview Insight)
+```
+Hashing always requires O(n) extra space.
+
+Sorting + two pointers can be O(1) extra space if:
+
+Modifying the input array is allowed
+
+Original indices are not required
+
+Key Clarification
+
+The extra space in the sorting approach is problem-specific, not pattern-specific.
+
+If indices are not required:
+```
+sort(nums.begin(), nums.end());
+// two pointer logic → O(1) extra space (ignoring recursion stack)
+```
+
+If indices are required:
+
+Extra space is unavoidable, regardless of approach.
