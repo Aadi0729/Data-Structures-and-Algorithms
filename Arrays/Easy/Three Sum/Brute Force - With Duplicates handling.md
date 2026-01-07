@@ -75,6 +75,12 @@ where ```M``` = number of unique triplets
 
 This is correct but inefficient, and that inefficiency is exactly why we optimize later.
 
+```
+In brute force, duplicates are unavoidable because the same values can come from different index combinations.
+To fix this, I sort each triplet and store it in a set, but this increases space and time complexity.
+That’s why we move to sorting + two pointers, where duplicates are handled implicitly.
+```
+
 **Follow-Up Questions (Interview Context)**
 
 1. Can you solve this in less than O(n³) time?
