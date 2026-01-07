@@ -66,6 +66,14 @@ int main() {
     return 0;
 }
 ```
+**Time Complexity:** ```O(n³ log M)```
+where ```M``` = number of unique triplets
+(```log M``` comes from set insertion)
+
+**Space Complexity:**
+```O(M)``` for storing unique triplets
+
+This is correct but inefficient, and that inefficiency is exactly why we optimize later.
 
 **Follow-Up Questions (Interview Context)**
 
