@@ -96,3 +96,8 @@ For 4-Sum:
 
 - Hashing becomes extremely messy
 - Sorting + pointers extends naturally
+
+```
+Time: O(n² · log M)
+Space: O(n + M)
+```
