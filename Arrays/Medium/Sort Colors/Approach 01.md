@@ -2,7 +2,11 @@
 
 **Space Complexity:** ```O(1)```
 
-One traversal, fully in-place
+One traversal, fully in-place 
+
+Takes 2 pass
+- One pass for counting
+- One pass for overwriting
 
 ```
 class Solution {
