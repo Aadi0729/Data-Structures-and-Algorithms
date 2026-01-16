@@ -21,9 +21,9 @@ public:
 
 **Time Complexity:**
 
-- Counting frequencies: O(n)
-- Iterating over the map: O(m) where m = number of unique elements
-O(n + m)
+- Counting frequencies: ```O(n)```
+- Iterating over the map: ```O(m)``` where m = number of unique elements
+```O(n + m)```
 Overall: ```O(n)``` (since m ≤ n)
 
 **Space Complexity:**
