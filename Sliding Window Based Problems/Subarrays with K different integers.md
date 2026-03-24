@@ -1,0 +1,35 @@
+'''
+class Solution {
+public:
+    int atmost(vector<int>& nums, int k) {
+        int n = nums.size();
+
+        unordered_map<int, int> freqMap;
+
+        int left = 0;
+        int right = 0;
+
+        int count = 0;
+
+        while(right < n) {
+            freqMap[nums[right]]++;
+
+            while(freqMap.size() > k) {
+                freqMap[nums[left]]--;
+
+                if(freqMap[nums[left]] == 0)
+                    freqMap.erase(nums[left]);
+                
+                left++;
+            }
+
+            count += right - left + 1;
+            right++;
+        }
+        return count;
+    }
+    int subarraysWithKDistinct(vector<int>& nums, int k) {
+        return atmost(nums, k) - atmost(nums, k-1);
+    }
+};
+'''
