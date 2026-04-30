@@ -88,16 +88,23 @@ int result = (a + b - 1) / b;
 ## Common Mistakes ⚠️
 
 ```cpp
-// ❌ Integer overflow in isPossible()
+// ❌ Integer overflow in accumulation
 int totalHours = 0;  // overflows for large inputs
 
 // ✅ Always use long long for accumulation
 long long totalHours = 0;
 
+// ❌ Integer overflow in condition checks involving multiplication
+if(m * k > bloomDay.size())  // m*k can exceed INT_MAX!
+
+// ✅ Cast to long long before multiplying
+if((long long)m * k > bloomDay.size())
+// OR declare m, k as long long directly
+
 // ❌ Passing vector by value (makes unnecessary copy)
 bool isPossible(vector<int> piles, int h, int mid)
 
-// ✅ Pass by const reference
+// ✅ Pass by reference
 bool isPossible(vector<int>& piles, int h, int mid)
 
 // ❌ Wrong loop condition
@@ -105,6 +112,25 @@ while (low < high)   // misses last valid value
 
 // ✅ Always use <=
 while (low <= high)
+
+// ❌ Missing curly braces — silent logic bug!
+if(count == k)
+    bouquets++;
+    count = 0;   // runs ALWAYS, not inside if!
+
+// ✅ Always use curly braces
+if(count == k) {
+    bouquets++;
+    count = 0;
+}
+```
+
+### Overflow Checklist for isPossible() 📝
+```
+Ask yourself:
+1. Am I accumulating sum in a loop?       → long long
+2. Am I multiplying two large numbers?    → long long cast
+3. Am I comparing product with size/sum?  → long long cast
 ```
 
 ---
@@ -172,6 +198,64 @@ int minEatingSpeed(vector<int>& piles, int h) {
 
 ---
 
+### 3. Minimum Days to Make Bouquets
+```
+Search space : [1, max(bloomDay)]
+isPossible   : can we make m bouquets of k adjacent flowers?
+Pattern      : Minimize → first TRUE
+Complexity   : O(n log d) where d = max(bloomDay)
+Edge case    : if m*k > n → return -1 (impossible)
+```
+```cpp
+bool isPossible(vector<int>& bloomDay, long long m, long long k, int mid) {
+    int count   = 0;
+    int bouquet = 0;
+
+    for (int i = 0; i < bloomDay.size(); i++) {
+        if (bloomDay[i] <= mid) {
+            count++;                  // flower bloomed → count adjacent
+            if (count == k) {         // k adjacent found → one bouquet!
+                bouquet++;
+                count = 0;            // reset for next bouquet
+            }
+        } else {
+            count = 0;                // not bloomed → adjacency breaks → reset
+        }
+    }
+    return bouquet >= m;
+}
+
+int minDays(vector<int>& bloomDay, long long m, long long k) {
+    if (m * k > bloomDay.size()) return -1;  // impossible
+
+    int low  = 1;
+    int high = *max_element(bloomDay.begin(), bloomDay.end());
+    int ans  = -1;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+        if (isPossible(bloomDay, m, k, mid)) {
+            ans  = mid;
+            high = mid - 1;           // minimize → go left
+        } else {
+            low  = mid + 1;
+        }
+    }
+    return ans;
+}
+```
+
+#### Key Insight for isPossible():
+```
+Walk array left to right:
+✅ bloomed     → count++
+count == k     → bouquet++, count = 0  (made one bouquet!)
+❌ not bloomed → count = 0             (adjacency broken → reset!)
+end            → return bouquet >= m
+```
+
+---
+
 ## Problem Roadmap
 
 | # | Problem | Pattern | Search Space |
@@ -195,3 +279,6 @@ int minEatingSpeed(vector<int>& piles, int h) {
 - *"isPossible() uses the input array. Binary search runs on the answer space."*
 - *"Always use long long when accumulating sums in isPossible()."*
 - *"`(n + k - 1) / k` — ceiling division trick every competitive programmer must know."*
+- *"Watch overflow not just in loops — also in condition checks involving multiplication."*
+- *"Always use curly braces even for single line if — saves hours of debugging."*
+- *"When adjacency breaks → reset count to 0. Don't decrement — reset completely."*
