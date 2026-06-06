@@ -266,32 +266,7 @@ public:
 - **Can you do it without binary search?** — Yes, O(m+n) merge, but that wastes the sorted property entirely.
 - **Does the order of nums1/nums2 matter?** — No, the swap at the top handles any ordering.
 
----
-
-## 7. YouTube Explanation Notes
-
-### Hook (First 30 Seconds)
-> *"This is LeetCode Hard #4. Most people either memorize it or avoid it. Today we will derive it from first principles — once you understand the partition idea, the code writes itself."*
-
-### Explanation Flow
-1. Start with brute force — merge and find middle. Clean, correct, but wasteful.
-2. Ask: *do we really need to build the whole array? What is median REALLY telling us?*
-3. Introduce the **cut visualization** — two scissors on two arrays.
-4. Derive the validity condition `L1<=R2` and `L2<=R1` interactively.
-5. Show **linked cuts** — fix cut1, cut2 is determined. One dimension of search.
-6. Show BS direction with monotonic argument — L1 too big means cut1 too far right.
-7. Handle edge cases — boundary cuts with INT_MIN/INT_MAX.
-8. Derive `(m+n+1)/2` naturally from odd/even convention.
-
-### Whiteboard Visuals to Draw
-- Two arrays with a vertical cut line on each
-- L1, R1, L2, R2 labeled clearly at boundaries
-- Arrow showing: move cut1 right → cut2 moves left automatically
-- Validity condition as two crossing arrows between the arrays
-
----
-
-## 8. Pattern Summary — Binary Search on Partition
+## 7. Pattern Summary — Binary Search on Partition
 
 ### When to Use This Pattern
 
